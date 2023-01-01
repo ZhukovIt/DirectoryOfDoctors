@@ -8,9 +8,9 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
     {
         private static readonly string connectionString = ConnectionString.GetPhotoDBConnectionString();
 
-        internal static async Task CreatePhotosTable()
+        internal static async Task CreateTable(string nameTable)
         {
-            string sqlExpression = @"CREATE TABLE Photos 
+            string sqlExpression = $"CREATE TABLE {nameTable}" + @" 
                                 (id INT PRIMARY KEY IDENTITY, 
                                  title NVARCHAR(50) NOT NULL, 
                                  fileName NVARCHAR(50) NOT NULL,
@@ -25,30 +25,7 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
                 }
                 catch (SqlException e)
                 {
-                    Console.WriteLine("Таблица Photos в базе данных PhotoDB уже создана!");
-                    Console.WriteLine(e.Message);
-                }
-            }
-        }
-
-        internal static async Task CreateIconsTable()
-        {
-            string sqlExpression = @"CREATE TABLE Icons 
-                                (id INT PRIMARY KEY IDENTITY, 
-                                 title NVARCHAR(50) NOT NULL, 
-                                 fileName NVARCHAR(50) NOT NULL,
-                                 imageData varbinary(MAX))";
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    await connection.OpenAsync();
-                    SqlCommand command = new SqlCommand(sqlExpression, connection);
-                    await command.ExecuteNonQueryAsync();
-                }
-                catch (SqlException e)
-                {
-                    Console.WriteLine("Таблица Icons в базе данных PhotoDB уже создана!");
+                    Console.WriteLine($"Таблица {nameTable} в базе данных PhotoDB уже создана!");
                     Console.WriteLine(e.Message);
                 }
             }

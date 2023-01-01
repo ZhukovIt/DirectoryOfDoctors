@@ -22,13 +22,13 @@ namespace DirectoryOfDoctors
 
         public Main()
         {
+            CreatorDB.CreateDB();
+            CreatorPhotosTable.CreateTable("Photos");
+            CreatorPhotosTable.CreateTable("Icons");
             InitializeComponent();
             connectionString = ConnectionString.GetDirectoryOfDoctorsConnectionString();
             dbConnector = new DBConnector(connectionString);
             UpdateAllDoctors();
-            CreatorDB.CreateDB();
-            CreatorPhotosTable.CreatePhotosTable();
-            CreatorPhotosTable.CreateIconsTable();
         }
 
         public string GetConnectionString()
