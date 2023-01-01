@@ -266,10 +266,10 @@ namespace DirectoryOfDoctors
                 sqlOrder = $"DELETE doctors_specializations WHERE doctor_id = {id}";
                 dbConnector.dbWorker.Connect(dbConnector.NonQuery, sqlOrder);
 
-                UpdateAllDoctors();
                 CheckDeleteButton(null, null);
                 CheckChangeButton(null, null);
             }
+            UpdateAllDoctors();
         }
 
         private void AddDoctorButton_Click(object sender, EventArgs e)
