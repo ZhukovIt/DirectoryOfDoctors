@@ -26,19 +26,8 @@ namespace DirectoryOfDoctors
             connectionString = ConnectionString.GetDirectoryOfDoctorsConnectionString();
             dbConnector = new DBConnector(connectionString);
             UpdateAllDoctors();
-            TryCreatePhotoDB();
-        }
-
-        private void TryCreatePhotoDB()
-        {
-            try
-            {
-                CreatorDB.CreateDB();
-            }
-            catch (SqlException e)
-            {
-                Console.WriteLine(e.Message);
-            }
+            CreatorDB.CreateDB();
+            CreatorPhotosTable.CreatePhotosTable();
         }
 
         public string GetConnectionString()

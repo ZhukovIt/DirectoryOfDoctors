@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System;
 
 namespace DirectoryOfDoctors.Classes.PhotoDB
 {
@@ -16,10 +13,17 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
             string sqlExpression = "CREATE DATABASE PhotoDB";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                await connection.OpenAsync();
-                SqlCommand command = new SqlCommand(sqlExpression, connection);
-                await command.ExecuteNonQueryAsync();
-                Console.WriteLine("База данных создана");
+                try
+                {
+                    await connection.OpenAsync();
+                    SqlCommand command = new SqlCommand(sqlExpression, connection);
+                    await command.ExecuteNonQueryAsync();
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine("База данных PhotosDB уже создана!");
+                    Console.WriteLine(e.Message);
+                }
             }
         }
     }
