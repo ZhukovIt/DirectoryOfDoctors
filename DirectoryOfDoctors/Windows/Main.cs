@@ -13,8 +13,8 @@ namespace DirectoryOfDoctors
     {
         private Point LastPoint;
         private IEnumerable<Doctor> doctors;
-        private string connectionString;
-        private DBConnector dbConnector;
+        private readonly string connectionString;
+        private readonly DBConnector dbConnector;
         internal string ActiveFilter = "Без фильтров";
 
         public Main()
@@ -298,7 +298,7 @@ namespace DirectoryOfDoctors
             }
             else
             {
-                snils = $"'{doctor.Snils.ToString()}'";
+                snils = $"'{doctor.Snils}'";
             }    
             int doctors_data_id = GetDoctorsDataId();
 
@@ -377,7 +377,7 @@ namespace DirectoryOfDoctors
             }
             else
             {
-                snils = $"'{doctor.Snils.ToString()}'";
+                snils = $"'{doctor.Snils}'";
             }
 
             sqlOrder = $"UPDATE doctors_data SET birthday = '{birthday}', snils = {snils}, ";
