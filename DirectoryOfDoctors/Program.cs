@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Threading.Tasks;
+using DirectoryOfDoctors.Classes.PhotoDB;
 
 namespace DirectoryOfDoctors
 {

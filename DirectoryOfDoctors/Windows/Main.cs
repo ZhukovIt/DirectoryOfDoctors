@@ -3,9 +3,12 @@ using System.Drawing;
 using System.Windows.Forms;
 using DirectoryOfDoctors.Classes;
 using DirectoryOfDoctors.Classes.Filters;
+using DirectoryOfDoctors.Classes.PhotoDB;
 using DirectoryOfDoctors.Windows;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace DirectoryOfDoctors
 {
@@ -23,6 +26,19 @@ namespace DirectoryOfDoctors
             connectionString = ConnectionString.GetDirectoryOfDoctorsConnectionString();
             dbConnector = new DBConnector(connectionString);
             UpdateAllDoctors();
+            TryCreatePhotoDB();
+        }
+
+        private void TryCreatePhotoDB()
+        {
+            try
+            {
+                CreatorDB.CreateDB();
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         public string GetConnectionString()

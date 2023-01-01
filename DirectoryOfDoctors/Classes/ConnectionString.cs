@@ -19,5 +19,10 @@ namespace DirectoryOfDoctors.Classes
             }
             return returnValue;
         }
+
+        internal static string GetPhotoDBConnectionString()
+        {
+            return GetConnectionStringByName("PhotoDB");
+        }
     }
 }

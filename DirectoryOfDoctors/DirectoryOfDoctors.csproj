@@ -77,6 +77,7 @@
     <Compile Include="Classes\Filters\PatronymicSpecification.cs" />
     <Compile Include="Classes\Filters\PostSpecification.cs" />
     <Compile Include="Classes\Human.cs" />
+    <Compile Include="Classes\PhotoDB\CreatorDB.cs" />
     <Compile Include="Classes\Snils.cs" />
     <Compile Include="Windows\InfoDoctor.cs">
       <SubType>Form</SubType>
