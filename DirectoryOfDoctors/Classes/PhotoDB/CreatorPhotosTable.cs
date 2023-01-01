@@ -30,5 +30,28 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
                 }
             }
         }
+
+        internal static async Task CreateIconsTable()
+        {
+            string sqlExpression = @"CREATE TABLE Icons 
+                                (id INT PRIMARY KEY IDENTITY, 
+                                 title NVARCHAR(50) NOT NULL, 
+                                 fileName NVARCHAR(50) NOT NULL,
+                                 imageData varbinary(MAX))";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    await connection.OpenAsync();
+                    SqlCommand command = new SqlCommand(sqlExpression, connection);
+                    await command.ExecuteNonQueryAsync();
+                }
+                catch (SqlException e)
+                {
+                    Console.WriteLine("Таблица Icons в базе данных PhotoDB уже создана!");
+                    Console.WriteLine(e.Message);
+                }
+            }
+        }
     }
 }

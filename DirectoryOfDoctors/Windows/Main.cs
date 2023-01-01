@@ -28,6 +28,7 @@ namespace DirectoryOfDoctors
             UpdateAllDoctors();
             CreatorDB.CreateDB();
             CreatorPhotosTable.CreatePhotosTable();
+            CreatorPhotosTable.CreateIconsTable();
         }
 
         public string GetConnectionString()
