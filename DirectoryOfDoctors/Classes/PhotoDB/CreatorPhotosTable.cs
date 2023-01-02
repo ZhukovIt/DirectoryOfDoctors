@@ -20,8 +20,10 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
                 try
                 {
                     await connection.OpenAsync();
-                    SqlCommand command = new SqlCommand(sqlExpression, connection);
-                    await command.ExecuteNonQueryAsync();
+                    using (SqlCommand command = new SqlCommand(sqlExpression, connection))
+                    {
+                        await command.ExecuteNonQueryAsync();
+                    }
                 }
                 catch (SqlException e)
                 {

@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Drawing;
 using System;
+using DirectoryOfDoctors.Classes.PhotoDB;
 
 namespace DirectoryOfDoctors.Classes
 {
@@ -44,7 +45,7 @@ namespace DirectoryOfDoctors.Classes
             InfoButton.FlatAppearance.MouseDownBackColor = Color.White;
             InfoButton.FlatAppearance.MouseOverBackColor = Color.White;
             InfoButton.FlatStyle = FlatStyle.Flat;
-            InfoButton.Image = Image.FromFile(AppPath + "\\icons\\info.png");
+            InfoButton.Image = Image.FromFile(new SaverFilesFromDB("Icons", AppPath, "icons", "info.png", "Кнопка инфо").GetFilePath());
             InfoButton.Location = new Point(283, -3);
             InfoButton.Name = $"InfoButton{Id}";
             InfoButton.Size = new Size(28, 28);
@@ -145,18 +146,17 @@ namespace DirectoryOfDoctors.Classes
             Image img;
             try
             {
-                img = Image.FromFile(AppPath + $"\\photos\\{Id}.jpg");
+                img = Image.FromFile(new SaverFilesFromDB("Photos", AppPath, "photos", $"{Id}.jpg", $"Врач с Id = {Id}").GetFilePath());
             }
             catch (FileNotFoundException e)
             {
                 Console.WriteLine(e.Message);
                 if (Sex == "female")
                 {
-                    img = Image.FromFile(AppPath + "\\photos\\standartWoman.png");
-                }
+                    img = Image.FromFile(new SaverFilesFromDB("Photos", AppPath, "photos", "standartWoman.png", "Стандартное фото женщины").GetFilePath());                }
                 else
                 {
-                    img = Image.FromFile(AppPath + "\\photos\\standartMan.jpg");
+                    img = Image.FromFile(new SaverFilesFromDB("Photos", AppPath, "photos", "standartMan.jpg", "Стандартное фото мужчины").GetFilePath());
                 }
             }
             return img;

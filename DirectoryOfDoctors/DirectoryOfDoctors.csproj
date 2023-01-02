@@ -79,6 +79,8 @@
     <Compile Include="Classes\Human.cs" />
     <Compile Include="Classes\PhotoDB\CreatorDB.cs" />
     <Compile Include="Classes\PhotoDB\CreatorPhotosTable.cs" />
+    <Compile Include="Classes\PhotoDB\ImageFromDB.cs" />
+    <Compile Include="Classes\PhotoDB\SaverFilesFromDB.cs" />
     <Compile Include="Classes\Snils.cs" />
     <Compile Include="Windows\InfoDoctor.cs">
       <SubType>Form</SubType>
