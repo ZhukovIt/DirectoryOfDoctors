@@ -80,9 +80,9 @@
             this.TitlePanel.Controls.Add(this.CloseLabel);
             this.TitlePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TitlePanel.Location = new System.Drawing.Point(0, 0);
-            this.TitlePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TitlePanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TitlePanel.Name = "TitlePanel";
-            this.TitlePanel.Size = new System.Drawing.Size(600, 33);
+            this.TitlePanel.Size = new System.Drawing.Size(800, 40);
             this.TitlePanel.TabIndex = 0;
             this.TitlePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleElement_MouseDown);
             this.TitlePanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitleElement_MouseMove);
@@ -92,10 +92,9 @@
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TitleLabel.ForeColor = System.Drawing.Color.White;
-            this.TitleLabel.Location = new System.Drawing.Point(220, 6);
-            this.TitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TitleLabel.Location = new System.Drawing.Point(293, 7);
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(175, 21);
+            this.TitleLabel.Size = new System.Drawing.Size(213, 26);
             this.TitleLabel.TabIndex = 1;
             this.TitleLabel.Text = "Добавление доктора";
             this.TitleLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleElement_MouseDown);
@@ -108,10 +107,9 @@
             this.CloseLabel.Dock = System.Windows.Forms.DockStyle.Right;
             this.CloseLabel.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CloseLabel.ForeColor = System.Drawing.Color.White;
-            this.CloseLabel.Location = new System.Drawing.Point(577, 0);
-            this.CloseLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CloseLabel.Location = new System.Drawing.Point(773, 0);
             this.CloseLabel.Name = "CloseLabel";
-            this.CloseLabel.Size = new System.Drawing.Size(21, 22);
+            this.CloseLabel.Size = new System.Drawing.Size(25, 27);
             this.CloseLabel.TabIndex = 0;
             this.CloseLabel.Text = "X";
             this.CloseLabel.Click += new System.EventHandler(this.CloseLabel_Click);
@@ -125,9 +123,10 @@
             this.AddDoctor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.AddDoctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddDoctor.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddDoctor.Location = new System.Drawing.Point(319, 314);
+            this.AddDoctor.Location = new System.Drawing.Point(425, 387);
+            this.AddDoctor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddDoctor.Name = "AddDoctor";
-            this.AddDoctor.Size = new System.Drawing.Size(150, 40);
+            this.AddDoctor.Size = new System.Drawing.Size(200, 49);
             this.AddDoctor.TabIndex = 1;
             this.AddDoctor.Text = "Добавить доктора";
             this.AddDoctor.UseVisualStyleBackColor = true;
@@ -138,16 +137,16 @@
             this.MainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MainPanel.Controls.Add(this.tableLayoutPanel1);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.MainPanel.Location = new System.Drawing.Point(0, 32);
-            this.MainPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MainPanel.Location = new System.Drawing.Point(0, 40);
+            this.MainPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(600, 374);
+            this.MainPanel.Size = new System.Drawing.Size(800, 460);
             this.MainPanel.TabIndex = 2;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 188F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 251F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.AddDoctor, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.ImageButton, 0, 1);
@@ -155,12 +154,12 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 372);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 458);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // ImageButton
@@ -172,9 +171,10 @@
             this.ImageButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.ImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ImageButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ImageButton.Location = new System.Drawing.Point(35, 306);
+            this.ImageButton.Location = new System.Drawing.Point(47, 377);
+            this.ImageButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ImageButton.Name = "ImageButton";
-            this.ImageButton.Size = new System.Drawing.Size(117, 56);
+            this.ImageButton.Size = new System.Drawing.Size(156, 69);
             this.ImageButton.TabIndex = 1;
             this.ImageButton.Text = "Вставка изображения";
             this.ImageButton.UseVisualStyleBackColor = true;
@@ -185,8 +185,8 @@
             this.DoctorPhoto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DoctorPhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.DoctorPhoto.Image = ((System.Drawing.Image)(resources.GetObject("DoctorPhoto.Image")));
-            this.DoctorPhoto.Location = new System.Drawing.Point(15, 58);
-            this.DoctorPhoto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DoctorPhoto.Location = new System.Drawing.Point(46, 93);
+            this.DoctorPhoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DoctorPhoto.Name = "DoctorPhoto";
             this.DoctorPhoto.Size = new System.Drawing.Size(158, 180);
             this.DoctorPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -215,8 +215,8 @@
             this.tableLayoutPanel2.Controls.Add(this.PostComboBox, 1, 6);
             this.tableLayoutPanel2.Controls.Add(this.SpecializationsClicker, 1, 7);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(190, 2);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(254, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 8;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
@@ -227,7 +227,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(408, 293);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(543, 362);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // FirstNameLabel
@@ -235,10 +235,9 @@
             this.FirstNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.FirstNameLabel.AutoSize = true;
             this.FirstNameLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FirstNameLabel.Location = new System.Drawing.Point(92, 8);
-            this.FirstNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.FirstNameLabel.Location = new System.Drawing.Point(124, 11);
             this.FirstNameLabel.Name = "FirstNameLabel";
-            this.FirstNameLabel.Size = new System.Drawing.Size(40, 19);
+            this.FirstNameLabel.Size = new System.Drawing.Size(52, 22);
             this.FirstNameLabel.TabIndex = 0;
             this.FirstNameLabel.Text = "Имя:";
             // 
@@ -247,10 +246,9 @@
             this.PatronymicLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.PatronymicLabel.AutoSize = true;
             this.PatronymicLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PatronymicLabel.Location = new System.Drawing.Point(56, 44);
-            this.PatronymicLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PatronymicLabel.Location = new System.Drawing.Point(81, 56);
             this.PatronymicLabel.Name = "PatronymicLabel";
-            this.PatronymicLabel.Size = new System.Drawing.Size(76, 19);
+            this.PatronymicLabel.Size = new System.Drawing.Size(95, 22);
             this.PatronymicLabel.TabIndex = 1;
             this.PatronymicLabel.Text = "Отчество:";
             // 
@@ -259,10 +257,9 @@
             this.LastNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LastNameLabel.AutoSize = true;
             this.LastNameLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LastNameLabel.Location = new System.Drawing.Point(57, 80);
-            this.LastNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LastNameLabel.Location = new System.Drawing.Point(81, 101);
             this.LastNameLabel.Name = "LastNameLabel";
-            this.LastNameLabel.Size = new System.Drawing.Size(75, 19);
+            this.LastNameLabel.Size = new System.Drawing.Size(95, 22);
             this.LastNameLabel.TabIndex = 2;
             this.LastNameLabel.Text = "Фамилия:";
             // 
@@ -271,10 +268,9 @@
             this.SexLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.SexLabel.AutoSize = true;
             this.SexLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SexLabel.Location = new System.Drawing.Point(93, 116);
-            this.SexLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SexLabel.Location = new System.Drawing.Point(126, 146);
             this.SexLabel.Name = "SexLabel";
-            this.SexLabel.Size = new System.Drawing.Size(39, 19);
+            this.SexLabel.Size = new System.Drawing.Size(50, 22);
             this.SexLabel.TabIndex = 3;
             this.SexLabel.Text = "Пол:";
             // 
@@ -283,10 +279,9 @@
             this.BirthdayLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.BirthdayLabel.AutoSize = true;
             this.BirthdayLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BirthdayLabel.Location = new System.Drawing.Point(17, 152);
-            this.BirthdayLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.BirthdayLabel.Location = new System.Drawing.Point(31, 191);
             this.BirthdayLabel.Name = "BirthdayLabel";
-            this.BirthdayLabel.Size = new System.Drawing.Size(115, 19);
+            this.BirthdayLabel.Size = new System.Drawing.Size(145, 22);
             this.BirthdayLabel.TabIndex = 4;
             this.BirthdayLabel.Text = "Дата рождения:";
             // 
@@ -295,10 +290,9 @@
             this.SnilsLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.SnilsLabel.AutoSize = true;
             this.SnilsLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SnilsLabel.Location = new System.Drawing.Point(76, 188);
-            this.SnilsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SnilsLabel.Location = new System.Drawing.Point(106, 236);
             this.SnilsLabel.Name = "SnilsLabel";
-            this.SnilsLabel.Size = new System.Drawing.Size(56, 19);
+            this.SnilsLabel.Size = new System.Drawing.Size(70, 22);
             this.SnilsLabel.TabIndex = 5;
             this.SnilsLabel.Text = "Снилс:";
             // 
@@ -307,10 +301,9 @@
             this.PostLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.PostLabel.AutoSize = true;
             this.PostLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PostLabel.Location = new System.Drawing.Point(44, 224);
-            this.PostLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PostLabel.Location = new System.Drawing.Point(64, 281);
             this.PostLabel.Name = "PostLabel";
-            this.PostLabel.Size = new System.Drawing.Size(88, 19);
+            this.PostLabel.Size = new System.Drawing.Size(112, 22);
             this.PostLabel.TabIndex = 6;
             this.PostLabel.Text = "Должность:";
             // 
@@ -319,10 +312,9 @@
             this.SpecializationsLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.SpecializationsLabel.AutoSize = true;
             this.SpecializationsLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SpecializationsLabel.Location = new System.Drawing.Point(13, 263);
-            this.SpecializationsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SpecializationsLabel.Location = new System.Drawing.Point(27, 327);
             this.SpecializationsLabel.Name = "SpecializationsLabel";
-            this.SpecializationsLabel.Size = new System.Drawing.Size(119, 19);
+            this.SpecializationsLabel.Size = new System.Drawing.Size(149, 22);
             this.SpecializationsLabel.TabIndex = 7;
             this.SpecializationsLabel.Text = "Специальности:";
             // 
@@ -330,30 +322,30 @@
             // 
             this.FirstNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FirstNameTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FirstNameTextBox.Location = new System.Drawing.Point(158, 5);
-            this.FirstNameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FirstNameTextBox.Location = new System.Drawing.Point(211, 7);
+            this.FirstNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FirstNameTextBox.Name = "FirstNameTextBox";
-            this.FirstNameTextBox.Size = new System.Drawing.Size(226, 26);
+            this.FirstNameTextBox.Size = new System.Drawing.Size(300, 30);
             this.FirstNameTextBox.TabIndex = 8;
             // 
             // PatronymicTextBox
             // 
             this.PatronymicTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PatronymicTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PatronymicTextBox.Location = new System.Drawing.Point(158, 41);
-            this.PatronymicTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PatronymicTextBox.Location = new System.Drawing.Point(211, 52);
+            this.PatronymicTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PatronymicTextBox.Name = "PatronymicTextBox";
-            this.PatronymicTextBox.Size = new System.Drawing.Size(226, 26);
+            this.PatronymicTextBox.Size = new System.Drawing.Size(300, 30);
             this.PatronymicTextBox.TabIndex = 9;
             // 
             // LastNameTextBox
             // 
             this.LastNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LastNameTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LastNameTextBox.Location = new System.Drawing.Point(158, 77);
-            this.LastNameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LastNameTextBox.Location = new System.Drawing.Point(211, 97);
+            this.LastNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LastNameTextBox.Name = "LastNameTextBox";
-            this.LastNameTextBox.Size = new System.Drawing.Size(226, 26);
+            this.LastNameTextBox.Size = new System.Drawing.Size(300, 30);
             this.LastNameTextBox.TabIndex = 10;
             // 
             // SexComboBox
@@ -365,10 +357,10 @@
             this.SexComboBox.Items.AddRange(new object[] {
             "Мужской",
             "Женский"});
-            this.SexComboBox.Location = new System.Drawing.Point(158, 112);
-            this.SexComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SexComboBox.Location = new System.Drawing.Point(211, 142);
+            this.SexComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SexComboBox.Name = "SexComboBox";
-            this.SexComboBox.Size = new System.Drawing.Size(226, 27);
+            this.SexComboBox.Size = new System.Drawing.Size(300, 30);
             this.SexComboBox.TabIndex = 11;
             // 
             // BirthdayDateTimePicker
@@ -377,10 +369,10 @@
             this.BirthdayDateTimePicker.CalendarFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BirthdayDateTimePicker.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BirthdayDateTimePicker.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BirthdayDateTimePicker.Location = new System.Drawing.Point(158, 149);
-            this.BirthdayDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BirthdayDateTimePicker.Location = new System.Drawing.Point(211, 187);
+            this.BirthdayDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BirthdayDateTimePicker.Name = "BirthdayDateTimePicker";
-            this.BirthdayDateTimePicker.Size = new System.Drawing.Size(226, 26);
+            this.BirthdayDateTimePicker.Size = new System.Drawing.Size(300, 30);
             this.BirthdayDateTimePicker.TabIndex = 12;
             // 
             // tableLayoutPanel3
@@ -399,23 +391,23 @@
             this.tableLayoutPanel3.Controls.Add(this.label2, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.SnilsTextBox4, 5, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(136, 182);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(182, 227);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(270, 32);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(358, 41);
             this.tableLayoutPanel3.TabIndex = 13;
             // 
             // SnilsTextBox1
             // 
             this.SnilsTextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SnilsTextBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SnilsTextBox1.Location = new System.Drawing.Point(0, 3);
+            this.SnilsTextBox1.Location = new System.Drawing.Point(0, 5);
             this.SnilsTextBox1.Margin = new System.Windows.Forms.Padding(0);
             this.SnilsTextBox1.MaxLength = 3;
             this.SnilsTextBox1.Name = "SnilsTextBox1";
-            this.SnilsTextBox1.Size = new System.Drawing.Size(60, 26);
+            this.SnilsTextBox1.Size = new System.Drawing.Size(79, 30);
             this.SnilsTextBox1.TabIndex = 0;
             this.SnilsTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.SnilsTextBox1.TextChanged += new System.EventHandler(this.SnilsTextBox1_TextChanged);
@@ -426,10 +418,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(62, 6);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(83, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(9, 19);
+            this.label1.Size = new System.Drawing.Size(11, 22);
             this.label1.TabIndex = 1;
             this.label1.Text = "-";
             // 
@@ -437,11 +428,11 @@
             // 
             this.SnilsTextBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SnilsTextBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SnilsTextBox2.Location = new System.Drawing.Point(75, 3);
+            this.SnilsTextBox2.Location = new System.Drawing.Point(100, 5);
             this.SnilsTextBox2.Margin = new System.Windows.Forms.Padding(0);
             this.SnilsTextBox2.MaxLength = 3;
             this.SnilsTextBox2.Name = "SnilsTextBox2";
-            this.SnilsTextBox2.Size = new System.Drawing.Size(56, 26);
+            this.SnilsTextBox2.Size = new System.Drawing.Size(73, 30);
             this.SnilsTextBox2.TabIndex = 0;
             this.SnilsTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.SnilsTextBox2.TextChanged += new System.EventHandler(this.SnilsTextBox2_TextChanged);
@@ -450,11 +441,11 @@
             // 
             this.SnilsTextBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SnilsTextBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SnilsTextBox3.Location = new System.Drawing.Point(148, 3);
+            this.SnilsTextBox3.Location = new System.Drawing.Point(197, 5);
             this.SnilsTextBox3.Margin = new System.Windows.Forms.Padding(0);
             this.SnilsTextBox3.MaxLength = 3;
             this.SnilsTextBox3.Name = "SnilsTextBox3";
-            this.SnilsTextBox3.Size = new System.Drawing.Size(56, 26);
+            this.SnilsTextBox3.Size = new System.Drawing.Size(73, 30);
             this.SnilsTextBox3.TabIndex = 0;
             this.SnilsTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.SnilsTextBox3.TextChanged += new System.EventHandler(this.SnilsTextBox3_TextChanged);
@@ -465,10 +456,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(135, 6);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(180, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(9, 19);
+            this.label2.Size = new System.Drawing.Size(11, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "-";
             // 
@@ -476,11 +466,11 @@
             // 
             this.SnilsTextBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SnilsTextBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SnilsTextBox4.Location = new System.Drawing.Point(210, 3);
+            this.SnilsTextBox4.Location = new System.Drawing.Point(279, 5);
             this.SnilsTextBox4.Margin = new System.Windows.Forms.Padding(0);
             this.SnilsTextBox4.MaxLength = 2;
             this.SnilsTextBox4.Name = "SnilsTextBox4";
-            this.SnilsTextBox4.Size = new System.Drawing.Size(56, 26);
+            this.SnilsTextBox4.Size = new System.Drawing.Size(73, 30);
             this.SnilsTextBox4.TabIndex = 0;
             this.SnilsTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -489,10 +479,10 @@
             this.PostComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PostComboBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PostComboBox.FormattingEnabled = true;
-            this.PostComboBox.Location = new System.Drawing.Point(158, 220);
-            this.PostComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PostComboBox.Location = new System.Drawing.Point(211, 277);
+            this.PostComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PostComboBox.Name = "PostComboBox";
-            this.PostComboBox.Size = new System.Drawing.Size(226, 27);
+            this.PostComboBox.Size = new System.Drawing.Size(300, 30);
             this.PostComboBox.TabIndex = 14;
             // 
             // SpecializationsClicker
@@ -502,10 +492,9 @@
             this.SpecializationsClicker.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SpecializationsClicker.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SpecializationsClicker.ForeColor = System.Drawing.Color.Blue;
-            this.SpecializationsClicker.Location = new System.Drawing.Point(237, 263);
-            this.SpecializationsClicker.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SpecializationsClicker.Location = new System.Drawing.Point(320, 327);
             this.SpecializationsClicker.Name = "SpecializationsClicker";
-            this.SpecializationsClicker.Size = new System.Drawing.Size(67, 19);
+            this.SpecializationsClicker.Size = new System.Drawing.Size(82, 22);
             this.SpecializationsClicker.TabIndex = 15;
             this.SpecializationsClicker.Text = "Выбрать";
             this.SpecializationsClicker.Click += new System.EventHandler(this.SpecializationsClicker_Click);
@@ -522,14 +511,14 @@
             // 
             // AddDoctorForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(600, 406);
+            this.ClientSize = new System.Drawing.Size(800, 500);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.TitlePanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddDoctorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddDoctorForm";

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,10 +20,12 @@ namespace DirectoryOfDoctors.Windows
         private readonly Main main;
         private TypeOperation operation;
         private List<string> selectSpecializations = new List<string>();
+        private string connectionString;
 
         public AddDoctorForm(Main main)
         {
             InitializeComponent();
+            connectionString = ConnectionString.GetDirectoryOfDoctorsConnectionString();
             this.main = main;
             dbConnector = new DBConnector(this.main.GetConnectionString());
             Id = GetLastIdDoctor();
@@ -210,20 +213,48 @@ namespace DirectoryOfDoctors.Windows
 
         private void FillPostComboBox()
         {
-            string readSQL = "SELECT post FROM posts;";
-            List<string> posts = (List<string>)dbConnector.dbWorker.Connect(dbConnector.GetAllPostsFromDB, readSQL);
-            foreach (string post in posts)
+            string sqlExpression = "SELECT * FROM posts";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                PostComboBox.Items.Add(post);
+                connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sqlExpression, connection);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+
+                DataTable dt = ds.Tables[0];
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    PostComboBox.Items.Add((string)row.ItemArray[1]);
+                }
             }
         }
 
         private void SpecializationsClicker_Click(object sender, EventArgs e)
         {
-            string readSQL = "SELECT specialization FROM specializations;";
-            List<string> specializations = (List<string>)dbConnector.dbWorker.Connect(dbConnector.GetAllSpecializationsFromDB, readSQL);
-            SelectorSpecializations selector = new SelectorSpecializations(this, specializations, selectSpecializations);
-            selector.ShowDialog();
+            string sqlExpression = "SELECT * FROM specializations";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sqlExpression, connection);
+
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+
+                DataTable dt = ds.Tables[0];
+                List<string> specializations = new List<string>();
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    specializations.Add((string)row.ItemArray[1]);
+                }
+                SelectorSpecializations selector = new SelectorSpecializations(this, specializations, selectSpecializations);
+                selector.ShowDialog();
+            }
         }
 
         private int GetLastIdDoctor()
