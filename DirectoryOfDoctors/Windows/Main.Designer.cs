@@ -295,7 +295,7 @@
             this.FinderButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.FinderButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.FinderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FinderButton.Image = ((System.Drawing.Image)(resources.GetObject("FinderButton.Image")));
+            this.FinderButton.Image = System.Drawing.Image.FromFile(new Classes.PhotoDB.SaverFilesFromDB("Icons", System.IO.Directory.GetCurrentDirectory(), "icons", "finder.png", "Кнопка поиска").GetFilePath());
             this.FinderButton.Location = new System.Drawing.Point(1100, 0);
             this.FinderButton.Margin = new System.Windows.Forms.Padding(0);
             this.FinderButton.Name = "FinderButton";
@@ -313,7 +313,7 @@
             this.FilterButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.FilterButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.FilterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FilterButton.Image = ((System.Drawing.Image)(resources.GetObject("FilterButton.Image")));
+            this.FilterButton.Image = System.Drawing.Image.FromFile(new Classes.PhotoDB.SaverFilesFromDB("Icons", System.IO.Directory.GetCurrentDirectory(), "icons", "filter.png", "Кнопка фильтра").GetFilePath());
             this.FilterButton.Location = new System.Drawing.Point(1221, 0);
             this.FilterButton.Margin = new System.Windows.Forms.Padding(0);
             this.FilterButton.Name = "FilterButton";
