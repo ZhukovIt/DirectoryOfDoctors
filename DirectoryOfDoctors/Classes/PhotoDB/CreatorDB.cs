@@ -8,16 +8,16 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
     {
         private static readonly string connectionString = ConnectionString.GetDirectoryOfDoctorsConnectionString();
 
-        internal static async Task CreateDB()
+        internal static void CreateDB()
         {
             string sqlExpression = "CREATE DATABASE PhotoDB";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
-                    await connection.OpenAsync();
+                    connection.Open();
                     SqlCommand command = new SqlCommand(sqlExpression, connection);
-                    await command.ExecuteNonQueryAsync();
+                    command.ExecuteNonQuery();
                 }
                 catch (SqlException e)
                 {

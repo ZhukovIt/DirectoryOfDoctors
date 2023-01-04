@@ -8,7 +8,7 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
     {
         private static readonly string connectionString = ConnectionString.GetPhotoDBConnectionString();
 
-        internal static async Task CreateTable(string nameTable)
+        internal static void CreateTable(string nameTable)
         {
             string sqlExpression = $"CREATE TABLE {nameTable}" + @" 
                                 (id INT PRIMARY KEY IDENTITY, 
@@ -19,10 +19,10 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
             {
                 try
                 {
-                    await connection.OpenAsync();
+                    connection.Open();
                     using (SqlCommand command = new SqlCommand(sqlExpression, connection))
                     {
-                        await command.ExecuteNonQueryAsync();
+                        command.ExecuteNonQuery();
                     }
                 }
                 catch (SqlException e)
