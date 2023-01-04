@@ -45,7 +45,7 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
         {
             string filePath = $"{FileBeforePath}\\{FileDirectory}\\{FileName}";
             bool IsExistsLocal = File.Exists(filePath);
-            bool IsExistsFromDB = HasFileFromDB();
+            bool IsExistsFromDB = HasFileFromDB().Result;
 
             if (IsExistsLocal)
             {
@@ -63,17 +63,17 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
             }
         }
 
-        private bool HasFileFromDB()
+        private async Task<bool> HasFileFromDB()
         {
             string sqlExpression = $"SELECT COUNT(*) FROM {TableName} WHERE fileName = '{FileName}'";
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
-                connection.Open();
+                await connection.OpenAsync();
 
                 using (SqlCommand command = new SqlCommand(sqlExpression, connection))
                 {
-                    int count = (int)command.ExecuteScalar();
+                    int count = (int)await command.ExecuteScalarAsync();
                     return count > 0;
                 }
             }

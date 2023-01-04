@@ -117,30 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="FinderButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADrwAAA68AZW8ckkAAAFvSURBVEhLtZTBTgIxFEVZsdGw
-        08RfUBLRBcJPoiD8jW7csgONPyA/ACww0Qz3TGjo0Ndak5mbnKR909fbefM6raIoGsUM1slxEKornsS7
-        2B5gTIxnSaUM2mImfgUPLH7Es2CtqZgBCa+CwE6MxYM4O8CYjb8Fa16EaRIz4ORMvsQtgYh6gjWsnRA4
-        lWVAXXl1Tp7a3OlO8Cbk3BDwZRnw8RhQllxNBTmjcubJMvggLvpMMjUQ5CzLmSfLYENcnDPJFGvJWZcz
-        T5YBi/5r0BHkcLiKLANXIloxV0NBDhewIsvgkbgw2y4i19ZBjmVAq7k2pc//0r2gTbnx1wR8WQaIW8qE
-        S5QyYfOVYC2tGihmwLXn+hPgdBhSZz48MKYs7lcBtOilqChmgDChppTLbXIKZeHkbM48MEkZOPFNuKEk
-        04b8rhlj7mrOpqZJjkGuLsRCsMmnuBK1GqDApG4D5Jdr3oQBwmQu3gKDpjCD9VG09slIddx9aY6IAAAA
-        AElFTkSuQmCC
-</value>
-  </data>
-  <data name="FilterButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADrwAAA68AZW8ckkAAAFOSURBVEhLzdZNK0RRHMfxIxET
-        2ZqF7XgBsxx5KEyyksZKUngBLG2lsOUdzJ6FlTwkD4sJOw8LRGJHYeNhEt/fQp1u56pznYlffXanc869
-        53//55qEyeMALzjDKIKlC2UcYwF7+MQEnGlFtwdNeIl6KFXYxA2iYzW3uYN24KMIO9NwjbuFaUHWwxau
-        0QilGru4QnSs5vZODq+4wBKOoN0OI1jasY17qJoK+H+pxSCmoLpXtQRLGqewK2ID36X566zgCX1owjg+
-        MAvvqBLWI/SlzsHOKh4RHfsTzR27wDzsJFlgEc4s4xn90CtSn9ErmkGQNOME9iGvoQ7BUoMBTKIHQcv0
-        z9OBHTxAvWgIwdKGN5xDVXIIndEInEnarhugqF3raWLbdcUvnKRXZgqKqktP5boyM/BOJ96h70SX/j60
-        2zEESy9K0G+LFoo5YGO+AGwtlUzg7eh4AAAAAElFTkSuQmCC
-</value>
-  </data>
 </root>

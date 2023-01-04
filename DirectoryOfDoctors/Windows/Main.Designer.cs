@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.Title_Panel = new System.Windows.Forms.Panel();
             this.TitleLabel = new System.Windows.Forms.Label();
             this.Close_Label = new System.Windows.Forms.Label();
@@ -61,7 +60,7 @@
             this.Title_Panel.Controls.Add(this.Close_Label);
             this.Title_Panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.Title_Panel.Location = new System.Drawing.Point(0, 0);
-            this.Title_Panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Title_Panel.Margin = new System.Windows.Forms.Padding(4);
             this.Title_Panel.Name = "Title_Panel";
             this.Title_Panel.Size = new System.Drawing.Size(1552, 40);
             this.Title_Panel.TabIndex = 1;
@@ -104,7 +103,7 @@
             this.MenuPanel.Controls.Add(this.ButtonsTableLayoutPanel);
             this.MenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuPanel.Location = new System.Drawing.Point(0, 40);
-            this.MenuPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MenuPanel.Margin = new System.Windows.Forms.Padding(4);
             this.MenuPanel.Name = "MenuPanel";
             this.MenuPanel.Size = new System.Drawing.Size(279, 712);
             this.MenuPanel.TabIndex = 2;
@@ -121,7 +120,7 @@
             this.ButtonsTableLayoutPanel.Controls.Add(this.SpecializationsListButton, 0, 3);
             this.ButtonsTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonsTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.ButtonsTableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonsTableLayoutPanel.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonsTableLayoutPanel.Name = "ButtonsTableLayoutPanel";
             this.ButtonsTableLayoutPanel.RowCount = 6;
             this.ButtonsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17F));
@@ -143,7 +142,7 @@
             this.AddDoctorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddDoctorButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AddDoctorButton.Location = new System.Drawing.Point(38, 155);
-            this.AddDoctorButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddDoctorButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddDoctorButton.Name = "AddDoctorButton";
             this.AddDoctorButton.Size = new System.Drawing.Size(200, 49);
             this.AddDoctorButton.TabIndex = 0;
@@ -161,7 +160,7 @@
             this.AllSelectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AllSelectButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AllSelectButton.Location = new System.Drawing.Point(38, 35);
-            this.AllSelectButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AllSelectButton.Margin = new System.Windows.Forms.Padding(4);
             this.AllSelectButton.Name = "AllSelectButton";
             this.AllSelectButton.Size = new System.Drawing.Size(200, 49);
             this.AllSelectButton.TabIndex = 0;
@@ -179,7 +178,7 @@
             this.DeleteDoctorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteDoctorButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DeleteDoctorButton.Location = new System.Drawing.Point(38, 512);
-            this.DeleteDoctorButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteDoctorButton.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteDoctorButton.Name = "DeleteDoctorButton";
             this.DeleteDoctorButton.Size = new System.Drawing.Size(200, 49);
             this.DeleteDoctorButton.TabIndex = 0;
@@ -198,7 +197,7 @@
             this.ChangeDoctorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ChangeDoctorButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ChangeDoctorButton.Location = new System.Drawing.Point(38, 627);
-            this.ChangeDoctorButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ChangeDoctorButton.Margin = new System.Windows.Forms.Padding(4);
             this.ChangeDoctorButton.Name = "ChangeDoctorButton";
             this.ChangeDoctorButton.Size = new System.Drawing.Size(200, 49);
             this.ChangeDoctorButton.TabIndex = 0;
@@ -217,7 +216,7 @@
             this.PostsListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PostsListButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PostsListButton.Location = new System.Drawing.Point(38, 266);
-            this.PostsListButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PostsListButton.Margin = new System.Windows.Forms.Padding(4);
             this.PostsListButton.Name = "PostsListButton";
             this.PostsListButton.Size = new System.Drawing.Size(200, 68);
             this.PostsListButton.TabIndex = 1;
@@ -235,7 +234,7 @@
             this.SpecializationsListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SpecializationsListButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SpecializationsListButton.Location = new System.Drawing.Point(38, 384);
-            this.SpecializationsListButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SpecializationsListButton.Margin = new System.Windows.Forms.Padding(4);
             this.SpecializationsListButton.Name = "SpecializationsListButton";
             this.SpecializationsListButton.Size = new System.Drawing.Size(200, 71);
             this.SpecializationsListButton.TabIndex = 2;
@@ -249,7 +248,7 @@
             this.ContentPanel.Controls.Add(this.DoctorTableLayoutPanel);
             this.ContentPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ContentPanel.Location = new System.Drawing.Point(279, 74);
-            this.ContentPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ContentPanel.Margin = new System.Windows.Forms.Padding(4);
             this.ContentPanel.Name = "ContentPanel";
             this.ContentPanel.Size = new System.Drawing.Size(1273, 678);
             this.ContentPanel.TabIndex = 3;
@@ -263,7 +262,7 @@
             this.DoctorTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 435F));
             this.DoctorTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DoctorTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.DoctorTableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DoctorTableLayoutPanel.Margin = new System.Windows.Forms.Padding(4);
             this.DoctorTableLayoutPanel.Name = "DoctorTableLayoutPanel";
             this.DoctorTableLayoutPanel.RowCount = 3;
             this.DoctorTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 220F));
@@ -295,7 +294,6 @@
             this.FinderButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.FinderButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.FinderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FinderButton.Image = System.Drawing.Image.FromFile(new Classes.PhotoDB.SaverFilesFromDB("Icons", System.IO.Directory.GetCurrentDirectory(), "icons", "finder.png", "Кнопка поиска").GetFilePath());
             this.FinderButton.Location = new System.Drawing.Point(1100, 0);
             this.FinderButton.Margin = new System.Windows.Forms.Padding(0);
             this.FinderButton.Name = "FinderButton";
@@ -313,7 +311,6 @@
             this.FilterButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.FilterButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.FilterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FilterButton.Image = System.Drawing.Image.FromFile(new Classes.PhotoDB.SaverFilesFromDB("Icons", System.IO.Directory.GetCurrentDirectory(), "icons", "filter.png", "Кнопка фильтра").GetFilePath());
             this.FilterButton.Location = new System.Drawing.Point(1221, 0);
             this.FilterButton.Margin = new System.Windows.Forms.Padding(0);
             this.FilterButton.Name = "FilterButton";
@@ -346,7 +343,7 @@
             this.Controls.Add(this.MenuPanel);
             this.Controls.Add(this.Title_Panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(1700, 800);
             this.MinimumSize = new System.Drawing.Size(1400, 700);
             this.Name = "Main";
