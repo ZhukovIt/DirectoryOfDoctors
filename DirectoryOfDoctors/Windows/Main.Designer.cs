@@ -20,6 +20,12 @@
             base.Dispose(disposing);
         }
 
+        private void SetIconsFromForm()
+        {
+            this.FilterButton.Image = System.Drawing.Image.FromFile(new DirectoryOfDoctors.Classes.PhotoDB.SaverFilesFromDB("Icons", System.IO.Directory.GetCurrentDirectory(), "icons", "filter.png", "Кнопка фильтра").GetFilePath());
+            this.FinderButton.Image = System.Drawing.Image.FromFile(new DirectoryOfDoctors.Classes.PhotoDB.SaverFilesFromDB("Icons", System.IO.Directory.GetCurrentDirectory(), "icons", "finder.png", "Кнопка поиска").GetFilePath());
+        }
+
         #region Код, автоматически созданный конструктором форм Windows
 
         /// <summary>
