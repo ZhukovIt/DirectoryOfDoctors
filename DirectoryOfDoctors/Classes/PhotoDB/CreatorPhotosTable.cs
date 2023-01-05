@@ -8,27 +8,39 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
     {
         private static readonly string connectionString = ConnectionString.GetPhotoDBConnectionString();
 
-        internal static async Task CreateTable(string nameTable)
+        internal static void CreateTable(string nameTable)
         {
             string sqlExpression = $"CREATE TABLE {nameTable}" + @" 
                                 (id INT PRIMARY KEY IDENTITY, 
                                  title NVARCHAR(50) NOT NULL, 
                                  fileName NVARCHAR(50) NOT NULL,
                                  imageData varbinary(MAX))";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            SqlConnection connection;
+            SqlCommand command = null;
+            
+            using (connection = new SqlConnection(connectionString))
             {
                 try
                 {
-                    await connection.OpenAsync();
-                    using (SqlCommand command = new SqlCommand(sqlExpression, connection))
+                    connection.Open();
+                    using (command = new SqlCommand(sqlExpression, connection))
                     {
-                        await command.ExecuteNonQueryAsync();
+                        command.ExecuteNonQuery();
                     }
                 }
                 catch (SqlException e)
                 {
                     Console.WriteLine($"Таблица {nameTable} в базе данных PhotoDB уже создана!");
                     Console.WriteLine(e.Message);
+                }
+                finally
+                {
+                    if (command != null)
+                    {
+                        command.Dispose();
+                    }
+                    connection.Close();
+                    connection.Dispose();
                 }
             }
         }

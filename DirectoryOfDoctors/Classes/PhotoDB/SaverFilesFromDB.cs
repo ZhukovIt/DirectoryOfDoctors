@@ -53,21 +53,21 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
 
             if (IsExistsLocal)
             {
-                if (!await HasFileFromDB())
+                if (!HasFileFromDB())
                 {
                     await SaveFileFromDB(filePath);
                 }
             }
             else
             {
-                if (await HasFileFromDB())
+                if (HasFileFromDB())
                 {
-                    await ReadFileFromDB(filePath);
+                    ReadFileFromDB(filePath);
                 }
             }
         }
 
-        private async Task<bool> HasFileFromDB()
+        private bool HasFileFromDB()
         {
             string sqlExpression = $"SELECT COUNT(*) FROM {TableName} WHERE fileName = '{FileName}'";
             SqlConnection connection;
@@ -75,10 +75,10 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
 
             using (connection = new SqlConnection(ConnectionString))
             {
-                await connection.OpenAsync();
+                connection.Open();
 
                 command = new SqlCommand(sqlExpression, connection);
-                int count = (int)await command.ExecuteScalarAsync();
+                int count = (int)command.ExecuteScalar();
 
                 if (command != null)
                 {
@@ -106,7 +106,7 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
                 command.Parameters.Add("@title", SqlDbType.NVarChar, 50);
 
                 byte[] imageData;
-                using (FileStream fs = new FileStream(fileFullPath, FileMode.OpenOrCreate))
+                using (FileStream fs = new FileStream(fileFullPath, FileMode.Open))
                 {
                     imageData = new byte[fs.Length];
                     fs.Read(imageData, 0, imageData.Length);
@@ -125,7 +125,7 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
             }
         }
 
-        private async Task ReadFileFromDB(string filePath)
+        private void ReadFileFromDB(string filePath)
         {
             string sqlExpression = $"SELECT title, fileName, imageData FROM {TableName} WHERE fileName = '{FileName}'";
             ImageFromDB img;
@@ -135,19 +135,19 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
 
             using (connection = new SqlConnection(ConnectionString))
             {
-                await connection.OpenAsync();
+                connection.Open();
 
                 command = new SqlCommand(sqlExpression, connection);
                 using (reader = command.ExecuteReader())
                 {
-                    await reader.ReadAsync();
+                    reader.Read();
                     string title = reader.GetString(0);
                     string fileName = reader.GetString(1);
                     byte[] imageData = (byte[])reader.GetValue(2);
 
                     img = new ImageFromDB(fileName, title, imageData);
 
-                    using (FileStream fs = new FileStream(filePath, FileMode.Open))
+                    using (FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate))
                     {
                         fs.Write(imageData, 0, imageData.Length);
                     }

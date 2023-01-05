@@ -124,7 +124,7 @@
             this.AddDoctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddDoctor.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AddDoctor.Location = new System.Drawing.Point(425, 387);
-            this.AddDoctor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddDoctor.Margin = new System.Windows.Forms.Padding(4);
             this.AddDoctor.Name = "AddDoctor";
             this.AddDoctor.Size = new System.Drawing.Size(200, 49);
             this.AddDoctor.TabIndex = 1;
@@ -172,7 +172,7 @@
             this.ImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ImageButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ImageButton.Location = new System.Drawing.Point(47, 377);
-            this.ImageButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ImageButton.Margin = new System.Windows.Forms.Padding(4);
             this.ImageButton.Name = "ImageButton";
             this.ImageButton.Size = new System.Drawing.Size(156, 69);
             this.ImageButton.TabIndex = 1;
