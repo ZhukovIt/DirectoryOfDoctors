@@ -22,11 +22,9 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
             {
                 try
                 {
-                    await connection.OpenAsync();
-                    using (SqlCommand command = new SqlCommand(sqlExpression, connection))
-                    {
-                        command.ExecuteNonQuery();
-                    }
+                    connection.Open();
+                    command = new SqlCommand(sqlExpression, connection);
+                    command.ExecuteNonQuery();
                 }
                 catch (SqlException e)
                 {

@@ -18,9 +18,9 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
             {
                 try
                 {
-                    await connection.OpenAsync();
-                    SqlCommand command = new SqlCommand(sqlExpression, connection);
-                    await command.ExecuteNonQueryAsync();
+                    connection.Open();
+                    command = new SqlCommand(sqlExpression, connection);
+                    command.ExecuteNonQuery();
                 }
                 catch (SqlException e)
                 {
