@@ -11,18 +11,30 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
         internal static void CreateDB()
         {
             string sqlExpression = "CREATE DATABASE PhotoDB";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            SqlConnection connection;
+            SqlCommand command = null;
+
+            using (connection = new SqlConnection(connectionString))
             {
                 try
                 {
-                    connection.Open();
+                    await connection.OpenAsync();
                     SqlCommand command = new SqlCommand(sqlExpression, connection);
-                    command.ExecuteNonQuery();
+                    await command.ExecuteNonQueryAsync();
                 }
                 catch (SqlException e)
                 {
                     Console.WriteLine("База данных PhotosDB уже создана!");
                     Console.WriteLine(e.Message);
+                }
+                finally
+                {
+                    if (command != null)
+                    {
+                        command.Dispose();
+                    }
+                    connection.Close();
+                    connection.Dispose();
                 }
             }
         }

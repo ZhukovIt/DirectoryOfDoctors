@@ -14,6 +14,7 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
         private string FileName { get; set; }
         private string FileDirectory { get; set; }
         private string Title { get; set; }
+        private Task Task { get; set; }
 
         public SaverFilesFromDB(string tableName, string fileBeforePath, string fileDirectory, string fileName, string title)
         {
@@ -24,7 +25,11 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
             FileName = fileName;
             Title = title;
             CheckExistsDirectory();
-            CheckExistsFile();
+            object locker = new object();
+            lock (locker)
+            {
+                Task = CheckExistsFile();
+            }
         }
 
         public string GetFilePath()
@@ -41,71 +46,82 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
             }
         }
 
-        private void CheckExistsFile()
+        private async Task CheckExistsFile()
         {
             string filePath = $"{FileBeforePath}\\{FileDirectory}\\{FileName}";
             bool IsExistsLocal = File.Exists(filePath);
-            bool IsExistsFromDB = HasFileFromDB().Result;
 
             if (IsExistsLocal)
             {
-                if (!IsExistsFromDB)
+                if (!HasFileFromDB())
                 {
-                    SaveFileFromDB(filePath);
+                    await SaveFileFromDB(filePath);
                 }
             }
             else
             {
-                if (IsExistsFromDB)
+                if (HasFileFromDB())
                 {
                     ReadFileFromDB(filePath);
                 }
             }
         }
 
-        private async Task<bool> HasFileFromDB()
+        private bool HasFileFromDB()
         {
             string sqlExpression = $"SELECT COUNT(*) FROM {TableName} WHERE fileName = '{FileName}'";
+            SqlConnection connection;
+            SqlCommand command = null;
 
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            {
-                await connection.OpenAsync();
-
-                using (SqlCommand command = new SqlCommand(sqlExpression, connection))
-                {
-                    int count = (int)await command.ExecuteScalarAsync();
-                    return count > 0;
-                }
-            }
-        }
-
-        private void SaveFileFromDB(string fileFullPath)
-        {
-            string sqlExpression = $"INSERT INTO {TableName} VALUES (@title, @fileName, @imageData)";
-
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
 
-                using (SqlCommand command = new SqlCommand(sqlExpression, connection))
+                command = new SqlCommand(sqlExpression, connection);
+                int count = (int)command.ExecuteScalar();
+
+                if (command != null)
                 {
-                    command.Parameters.Add("@fileName", SqlDbType.NVarChar, 50);
-                    command.Parameters.Add("@title", SqlDbType.NVarChar, 50);
-
-                    byte[] imageData;
-                    using (FileStream fs = new FileStream(fileFullPath, FileMode.Open))
-                    {
-                        imageData = new byte[fs.Length];
-                        fs.Read(imageData, 0, imageData.Length);
-                        command.Parameters.Add("@imageData", SqlDbType.Image, Convert.ToInt32(fs.Length));
-                    }
-
-                    command.Parameters["@fileName"].Value = FileName;
-                    command.Parameters["@title"].Value = Title;
-                    command.Parameters["@imageData"].Value = imageData;
-
-                    command.ExecuteNonQuery();
+                    command.Dispose();
                 }
+                connection.Close();
+
+                return count > 0;
+            }
+        }
+
+        private async Task SaveFileFromDB(string fileFullPath)
+        {
+            string sqlExpression = $"INSERT INTO {TableName} VALUES (@title, @fileName, @imageData)";
+            SqlConnection connection;
+            SqlCommand command = null;
+
+            using (connection = new SqlConnection(ConnectionString))
+            {
+                await connection.OpenAsync();
+
+                command = new SqlCommand(sqlExpression, connection);
+
+                command.Parameters.Add("@fileName", SqlDbType.NVarChar, 50);
+                command.Parameters.Add("@title", SqlDbType.NVarChar, 50);
+
+                byte[] imageData;
+                using (FileStream fs = new FileStream(fileFullPath, FileMode.Open))
+                {
+                    imageData = new byte[fs.Length];
+                    fs.Read(imageData, 0, imageData.Length);
+                    command.Parameters.Add("@imageData", SqlDbType.Image, Convert.ToInt32(fs.Length));
+                }
+
+                command.Parameters["@fileName"].Value = FileName;
+                command.Parameters["@title"].Value = Title;
+                command.Parameters["@imageData"].Value = imageData;
+
+                await command.ExecuteNonQueryAsync();
+
+                command.Dispose();
+                connection.Close();
+                connection.Dispose();
             }
         }
 
@@ -113,13 +129,16 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
         {
             string sqlExpression = $"SELECT title, fileName, imageData FROM {TableName} WHERE fileName = '{FileName}'";
             ImageFromDB img;
+            SqlConnection connection;
+            SqlCommand command = null;
+            SqlDataReader reader;
 
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
 
-                SqlCommand command = new SqlCommand(sqlExpression, connection);
-                using (SqlDataReader reader = command.ExecuteReader())
+                command = new SqlCommand(sqlExpression, connection);
+                using (reader = command.ExecuteReader())
                 {
                     reader.Read();
                     string title = reader.GetString(0);
@@ -132,6 +151,11 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
                     {
                         fs.Write(imageData, 0, imageData.Length);
                     }
+
+                    reader.Close();
+                    command.Dispose();
+                    connection.Close();
+                    connection.Dispose();
                 }
             }
         }

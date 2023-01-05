@@ -29,6 +29,7 @@ namespace DirectoryOfDoctors
             connectionString = ConnectionString.GetDirectoryOfDoctorsConnectionString();
             dbConnector = new DBConnector(connectionString);
             UpdateAllDoctors();
+            SetIconsFromForm();
         }
 
         public string GetConnectionString()

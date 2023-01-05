@@ -15,11 +15,14 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
                                  title NVARCHAR(50) NOT NULL, 
                                  fileName NVARCHAR(50) NOT NULL,
                                  imageData varbinary(MAX))";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            SqlConnection connection;
+            SqlCommand command = null;
+            
+            using (connection = new SqlConnection(connectionString))
             {
                 try
                 {
-                    connection.Open();
+                    await connection.OpenAsync();
                     using (SqlCommand command = new SqlCommand(sqlExpression, connection))
                     {
                         command.ExecuteNonQuery();
@@ -29,6 +32,15 @@ namespace DirectoryOfDoctors.Classes.PhotoDB
                 {
                     Console.WriteLine($"Таблица {nameTable} в базе данных PhotoDB уже создана!");
                     Console.WriteLine(e.Message);
+                }
+                finally
+                {
+                    if (command != null)
+                    {
+                        command.Dispose();
+                    }
+                    connection.Close();
+                    connection.Dispose();
                 }
             }
         }
